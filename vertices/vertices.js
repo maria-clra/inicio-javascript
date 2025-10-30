@@ -1,8 +1,8 @@
-const canvas = document.getElementById('c');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('c'); // DOM (linkado com o que tem no hmtl)
+const ctx = canvas.getContext('2d'); // canvas é um canva kkkk dá pra fazer arte
 let W = canvas.width, H = canvas.height;
 
-const AudioCtx = window.AudioContext || window.webkitAudioContext;
+const AudioCtx = window.AudioContext || window.webkitAudioContext; //gerencia tudo
 let audioCtx = null;
 
 const defaultScales = {
@@ -20,7 +20,7 @@ function freqFromNoteName(name) {
     const a4 = 440;
     const noteNumber = (octave + 1) * 12 + noteIndex;
     return a4 * Math.pow(2, (noteNumber - 69) / 12);
-}
+} // matemática da música <3
 
 
 const shapeSel = document.getElementById('shape');
@@ -73,12 +73,12 @@ function updateTiming() {
     bpmVal.textContent = bpm;
     tPerEdge = 60000 / bpm;
 }
-updateTiming();
+updateTiming(); // Converte BPM para ms por batida
 
 function playNote(freq) {
     if (!audioCtx) return;
-    const o = audioCtx.createOscillator();
-    const g = audioCtx.createGain();
+    const o = audioCtx.createOscillator(); // gera som
+    const g = audioCtx.createGain(); // volume
     o.type = 'sine';
     o.frequency.value = freq;
     g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
@@ -184,7 +184,7 @@ function reset() {
     edgeIndex = 0;
     position = 0;
     currentNoteEl.textContent = '—';
-}
+} // voltar do zero!
 
 window.addEventListener('resize', () => { W = canvas.width = canvas.clientWidth; H = canvas.height = canvas.clientHeight; vertices = polygonVertices(W / 2, H / 2, Math.min(W, H) / 3, sides); });
 
