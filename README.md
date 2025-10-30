@@ -11,6 +11,9 @@ Música e formas geométricas: projeto interativo que conecta notas musicais a f
 
  * Nos próximos eu divido os projetos por repositório kkkkk
 
- * JavaScrpit não é minha linguagem preferida, mas gostei bastante desse.
+ * JavaScript não é minha linguagem preferida, mas gostei bastante desse.
  
- <p align="center"> <img src="demo.gif" alt="Demonstração do projeto" width="500"> </p>
+<p align="center">
+  <img src="vertices/demo.gif" alt="Demonstração do projeto" width="500">
+</p>
+
